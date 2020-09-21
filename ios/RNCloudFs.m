@@ -430,4 +430,12 @@ RCT_EXPORT_METHOD(copyToCloud:(NSDictionary *)options
 
 }
 
+- (NSDictionary *)constantsToExport
+{
+  return @{
+           @"RNCloudFSICloudDirectoryPath": [[self icloudDirectory] path],
+           @"RNCloudFSICloudDocumentsPath": [[self icloudDocumentsDirectory] path]
+          };
+}
+
 @end

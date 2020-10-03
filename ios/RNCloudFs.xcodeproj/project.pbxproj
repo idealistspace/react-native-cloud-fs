@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57DB8AEB25282FEA00403697 /* RNCloudFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DB8AEA25282FEA00403697 /* RNCloudFileManager.m */; };
+		57DB8AEE252832C600403697 /* RNCloudFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DB8AED252832C600403697 /* RNCloudFileLoader.swift */; };
+		57DB8AF1252835F900403697 /* RNCloudFileLoaderBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DB8AF0252835F900403697 /* RNCloudFileLoaderBridge.m */; };
 		B3E7B58A1CC2AC0600A0062D /* RNCloudFs.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCloudFs.m */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +27,11 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNCloudFs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCloudFs.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		57DB8AE925282FEA00403697 /* RNCloudFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCloudFileManager.h; sourceTree = "<group>"; };
+		57DB8AEA25282FEA00403697 /* RNCloudFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCloudFileManager.m; sourceTree = "<group>"; };
+		57DB8AEC252832C500403697 /* RNCloudFs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNCloudFs-Bridging-Header.h"; sourceTree = "<group>"; };
+		57DB8AED252832C600403697 /* RNCloudFileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNCloudFileLoader.swift; sourceTree = "<group>"; };
+		57DB8AF0252835F900403697 /* RNCloudFileLoaderBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCloudFileLoaderBridge.m; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNCloudFs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCloudFs.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCloudFs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCloudFs.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,9 +58,14 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				57DB8AF0252835F900403697 /* RNCloudFileLoaderBridge.m */,
+				57DB8AED252832C600403697 /* RNCloudFileLoader.swift */,
+				57DB8AE925282FEA00403697 /* RNCloudFileManager.h */,
+				57DB8AEA25282FEA00403697 /* RNCloudFileManager.m */,
 				B3E7B5881CC2AC0600A0062D /* RNCloudFs.h */,
 				B3E7B5891CC2AC0600A0062D /* RNCloudFs.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				57DB8AEC252832C500403697 /* RNCloudFs-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +100,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -95,6 +109,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -112,7 +127,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57DB8AEE252832C600403697 /* RNCloudFileLoader.swift in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNCloudFs.m in Sources */,
+				57DB8AEB25282FEA00403697 /* RNCloudFileManager.m in Sources */,
+				57DB8AF1252835F900403697 /* RNCloudFileLoaderBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,32 +214,41 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
-				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNCloudFs;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		58B511F11A9E6C8500147676 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNCloudFs;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNCloudFs-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		58B511F11A9E6C8500147676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RNCloudFs;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNCloudFs-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

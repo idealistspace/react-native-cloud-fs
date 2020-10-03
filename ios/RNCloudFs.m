@@ -20,6 +20,11 @@
     return dispatch_queue_create("RNCloudFs.queue", DISPATCH_QUEUE_SERIAL);
 }
 
++ (BOOL)requiresMainQueueSetup
+{
+  return NO;
+}
+
 RCT_EXPORT_MODULE()
 
 //see https://developer.apple.com/library/content/documentation/General/Conceptual/iCloudDesignGuide/Chapters/iCloudFundametals.html
